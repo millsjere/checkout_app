@@ -9,9 +9,11 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
  const {initiatePayment, transactionRef, transactionStatus} = useInitiatePayment({
     onSuccess: ()=> {
+        onPaymentSuccess!(transactionRef);
         console.log('Payment successful with transaction ref:', transactionRef);
     },
     onFailure: ()=> {
+        onPaymentError!(transactionRef);
         console.log('Payment failed');
     },
     onCancel: ()=> {
