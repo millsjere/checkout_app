@@ -17,9 +17,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     onCancel: ()=> {
         console.log('Payment cancelled by user');
     },
-    apiKey: '56578797325.028332d112b8f-db04-4ee0-9dd7-11b319f0916c',
-    transflowId: '20595b80-f1ed-455e-8d3c-92e388002819',
-    merchantProductId: 'de4a4742-ebdb-480e-ae35-001bcedb85db',
+    apiKey: process.env.REACT_APP_API_KEY || '',
+    transflowId: process.env.REACT_APP_TRANSFLOW_ID || '',
+    merchantProductId: process.env.REACT_APP_MERCHANT_PRODUCT_ID || '',
     pageTitle: 'Checkout Payment',
     currency: 'GHS',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSeUYGFxgznznqSXV4r8m6iuAFBhX7FLbqOA&s',
